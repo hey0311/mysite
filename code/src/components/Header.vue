@@ -5,20 +5,22 @@
     <div class="header-top container-fuild hidden-xs">
       <div class="container">
         <div class="server pull-left">
-          <span class="glyphicon glyphicon-earphone"></span>888-888-888
-          <span class="glyphicon glyphicon-envelope"></span>liyunkun_11@163.com
-          <span class="glyphicon glyphicon-time"></span>7x24小时为您服务
+          <img class="whatapp_icon" src="@/assets/img/whatsapp.png"/>
+          <span class="glyphicon glyphicon-earphone"></span>0086+13691663387
+          <!-- TODO: add whatapp icon -->
+          <span class="glyphicon glyphicon-envelope"></span>info@buyshipnow.com
+          <!-- <span class="glyphicon glyphicon-time"></span>7x24小时为您服务 -->
         </div>
         <div class="shejiao pull-right">
-          <span class="glyphicon glyphicon-hand-right"></span>赶快联系我们吧！
-          <span class="glyphicon glyphicon-hand-left"></span>
+          <!-- <span class="glyphicon glyphicon-hand-right"></span>赶快联系我们吧！ -->
+          <!-- <span class="glyphicon glyphicon-hand-left"></span> -->
         </div>
       </div>
     </div>
     <!-- 电脑导航 -->
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
-      <div class="header-nav-logo">
+      <div class="header-nav-logo" @click="nav2Home">
         <img src="@/assets/img/logo_black.png">
       </div>
       <!-- 导航内容 -->
@@ -84,50 +86,50 @@ export default {
   data() {
     return {
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
-      menuName: "首页",
+      menuName: "HOME",
       menuClass: "glyphicon glyphicon-menu-down",
       navList: [
         {
-          name: "首页",
+          name: "HOME",
           path: "/",
           children: []
         },
         {
-          name: "软件产品",
-          path: "/software",
+          name: "Sourcing Service",
+          path: "/sourcingservice",
           children: [
-            {
-              name: "智能小镇管理系统",
-              path: "/software/smartTown"
-            },
-            {
-              name: "大数据管理系统",
-              path: "/software/bigData"
-            }
+            // {
+            //   name: "智能小镇管理系统",
+            //   path: "/software/smartTown"
+            // },
+            // {
+            //   name: "大数据管理系统",
+            //   path: "/software/bigData"
+            // }
           ]
         },
         {
-          name: "相关服务",
-          path: "/service",
+          name: "Fullfillment Service",
+          path: "/fullfillmentservice",
           children: []
         },
         {
-          name: "新闻动态",
+          name: "About Us",
           path: "/newsinformation",
           children: []
         },
         {
-          name: "公司介绍",
-          path: "/companyintroduction",
+          name: "Blog",
+          path: "/blog",
           children: []
         },
+        // {
+        //   name: "工作机会",
+        //   path: "/jobchance",
+        //   children: []
+        // },
         {
-          name: "工作机会",
-          path: "/jobchance",
-          children: []
-        },
-        {
-          name: "联系我们",
+          name: "Contact Us",
           path: "/contactus",
           children: []
         }
@@ -146,6 +148,11 @@ export default {
       } else {
         this.menuClass = "glyphicon glyphicon-menu-down";
       }
+    },
+    nav2Home(){
+      this.$router.push('/home')
+      this.navIndex = 0;
+      this.menuName = 'home';
     }
   }
 };
@@ -175,6 +182,7 @@ export default {
 #header .header-nav .header-nav-logo {
   width: 100px;
   height: 100%;
+  cursor: pointer;
   float: left;
   position: relative;
 }
@@ -208,7 +216,7 @@ export default {
 /* 导航栏 每个导航下面的 a 链接 */
 #header .header-nav .header-nav-wrapper > li > a {
   color: #000;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   padding: 15px 0;
   position: relative;
@@ -349,4 +357,10 @@ export default {
     font-size: 10px;
   }
 }
+  .whatapp_icon{
+    display: inline;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+  }
 </style>

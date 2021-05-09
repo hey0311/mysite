@@ -86,7 +86,7 @@ export default {
 }
 .Service-item-top{
     width: 100%;
-    height: 120px;
+    height: 220px;
     padding: 30px;
     text-align: center;
 }

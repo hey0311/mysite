@@ -25,7 +25,7 @@ export default new Router({
         }, {
           path: '/software',
           name: 'software',
-          component: resolve => require(['@/view/Software'], resolve),
+          component: resolve => require(['@/view/CompanyIntroduction'], resolve),
           meta: {
             title: '软件产品'
           },
@@ -54,7 +54,7 @@ export default new Router({
         }, {
           path: '/service',
           name: 'service',
-          component: resolve => require(['@/view/Service'], resolve),
+          component: resolve => require(['@/view/CompanyIntroduction'], resolve),
           meta: {
             title: '相关服务'
           }
@@ -94,7 +94,39 @@ export default new Router({
           meta: {
             title: '相关服务'
           }
-        }
+        },
+        {
+          path: '/sourcingservice',
+          name: 'Sourcing Service',
+          component: resolve => require(['@/view/SourcingService'],resolve),
+          meta: {
+            title: 'SourcingService'
+          }
+        },
+        {
+          path: '/fullfillmentservice',
+          name: 'Fullfillment Service',
+          component: resolve => require(['@/view/FullfillmentService'],resolve),
+          meta: {
+            title: 'FullfillmentService'
+          }
+        },
+        {
+          path: '/blog',
+          name: 'blog',
+          component: resolve => require(['@/view/Blog'],resolve),
+          meta: {
+            title: 'blog'
+          }
+        },
+        {
+          path: '/blogdetail',
+          name: 'blogdetail',
+          component: resolve => require(['@/view/BlogDetail'],resolve),
+          meta: {
+            title: 'blog detail'
+          }
+        },
       ]
     }
   ]

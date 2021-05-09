@@ -1,50 +1,48 @@
 <template>
   <div id="HomePage">
     <!-- 轮播图 -->
-    <div id="swiper" class="container-fuild">
+    <div id="swiper" class="container-fuild" :style="{height:swiperHeight+'px'}">
       <div class="swiper-container banner-swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
+          <div class="swiper-slide"  v-for="(item,index) in swiperList" :key="index">
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
-            <div class="swiper-slide-title">
+            <!-- <div class="swiper-slide-title">
                 <h1>{{item.title}}</h1>
                 <p>{{item.content}}</p>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
 
         <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div> -->
+        <!-- <div class="swiper-button-next"></div> -->
       </div>
     </div>
     <!-- 大数据管理系统 -->
-    <div id="bigData" class="container-fuild">
+    <div id="bigData" class="container-fuild" :key="item.name" v-for="item in serviceList">
       <div class="row bigData-container">
         <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="大数据管理系统">
+          <img class="img-responsive" src="@/assets/img/img1.png" alt="">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
-            大数据管理系统
-            <small>/ Big Data Management System</small>
+            {{item.title}}
           </h2>
-          <p>当今最领先的响应式自助建站平台。无论您是普通互联网用户，还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
-          <p>我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，还是专业网站制作人员。</p>
-          <h2 class="bigData-device">PC/PAD/Phone &nbsp; 全设备支持</h2>
-          <a href="#" class="btn btn-lg btn-block btn-info">联系我们</a>
+          <p :key="p" v-for="p in item.content">{{p}}</p>
+          <a @click="contactus" class="btn btn-lg btn-block btn-info">Contact Us</a>
         </div>
       </div>
     </div>
     <!-- 您身边的IT专家 -->
-    <div id="contactUs" class="container-fuild text-center">
+    <!-- <div id="contactUs" class="container-fuild text-center">
       <div class="container contactUs-container wow slideInUp">
         <h1>您身边的IT专家</h1>
         <h3>7x24小时提供出色的IT服务</h3>
         <button
+          @click="contactus"
           class="btn btn-default btn-sm"
           onmouseleave="this.style.borderColor='#ffffff'; this.style.backgroundColor='#ffffff'; this.style.color='#3f3f3f';"
           onmouseenter="this.style.backgroundColor='transparent'; this.style.borderColor='#ffffff'; this.style.color='#ffffff';"
@@ -55,9 +53,9 @@
           <span></span>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 客户评价 -->
-    <div id="customer" class="container-fuild">
+    <!-- <div id="customer" class="container-fuild">
       <div class="container customer-container">
         <p class="customer-title text-center">客户评价</p>
         <div class="swiper-container customer-swiper hidden-xs">
@@ -79,7 +77,6 @@
               <div class="customer-content2">{{item.title}}</div>
             </div>
           </div>
-          <!-- 如果需要导航按钮 -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
@@ -100,13 +97,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 为什么选择我们 -->
     <div id="whyChooseUs" class="conatiner-fuild">
       <div class="container">
         <div class="whyChooseUs-title text-center">
-          <p>为什么选择我们的服务</p>
-          <p>THE REASON TO CHOOSING US</p>
+          <!-- <p>为什么选择我们的服务</p> -->
+          <p>TRANSPORTATION</p>
         </div>
         <div class="row">
           <div
@@ -118,6 +115,7 @@
               class="server-block wow slideInUp"
               onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
+              :style="{height:'250px'}"
             >
               <img class="center-block" :src="item.logo" alt="logo">
               <p class="text-center">{{item.title}}</p>
@@ -141,32 +139,61 @@ export default {
   name: "HomePage",
   data() {
     return {
+      serviceList:[
+        {
+          title:'Free product sourcing and quote',
+          content:[
+            'Just give us a product link or image, we can quote within 24 hours ! This service is free.',
+            'Our price is much better than Aliexpress, we offer wholesale price for small order quantity.'
+          ]
+        },
+        {
+          title:'Free warehousing',
+          content:[
+            'We provide free warehousing services to each customer, we help you reduce storage pressure.',
+          ]
+        },
+        {
+          title:'Free quality control',
+          content:[
+            'Our QC team will inspect all orders before delivery.',
+          ]
+        },
+        {
+          title:'Combined delivery',
+          content:[
+            'When you need order different products from different supplier,we help you put them into same carton and deliver to your address, you only need pay freight one time,it cost much lower compare with seperately delivery.',
+          ]
+        },
+        {
+          title:'Make your own brand products',
+          content:[
+            "If you want to start your own brand, but don't know how to design the product and package? No worry, we can help you design it,we already helped many customers build their own brand,including private label, customized package, thanks cards, LOGO printing.",
+          ]
+        },
+        {
+          title:'Experienced in Import and Export',
+          content:[
+            'With more than 10 years working experience in import and export,we can ship nearly all countries,deliver by air, by sea, by train, by truck. ',
+            'We also accept FCL,LCL,and do customs clearance for you in China.'
+          ]
+        },
+        {
+          title:'Dropshipping ',
+          content:[
+            'Help you ship your products to your customers.',
+          ]
+        },
+      ],
       swiperList: [
         {
           img: require("@/assets/img/banner1.png"),
           path: "",
-          title: '您身边的IT专家1',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
-        },
-        {
-          img: require("@/assets/img/banner2.jpg"),
-          path: "",
-          title: '您身边的IT专家2',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
-        },
-        {
-          img: require("@/assets/img/banner1.png"),
-          path: "",
-          title: '您身边的IT专家3',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
-        },
-        {
-          img: require("@/assets/img/banner2.jpg"),
-          path: "",
-          title: '您身边的IT专家4',
+          title: '四月之春',
           content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
         }
       ],
+      swiperHeight:0,
       customerList: [
         {
           logo: require("@/assets/img/logo_hp.png"),
@@ -175,107 +202,35 @@ export default {
           content:
             "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
         },
-        {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_toyota.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_kk.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        },
-        {
-          logo: require("@/assets/img/logo_hp.png"),
-          title:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。",
-          content:
-            "您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。您可以双击这里或者点击编辑按钮来修改内容。您还可以添加图标，按钮，图片等常用元素。"
-        }
       ],
       serverList: [
         {
           logo: require("@/assets/img/tel.png"),
-          title: "核心优势1",
-          content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
+          title: "Air Transportation",
+          // content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
           logo: require("@/assets/img/computer.png"),
-          title: "核心优势2",
-          content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
+          title: "Sea Transportation",
+          // content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
           logo: require("@/assets/img/qq.png"),
-          title: "核心优势3",
-          content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
+          title: "Railway/Truck transportation",
+          // content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
           logo: require("@/assets/img/skill.png"),
-          title: "核心优势4",
-          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+          title: "FBA Amazon",
+          // content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ]
     };
+  },
+  methods:{
+    contactus(){
+      this.$router.push('/contactus')
+    }
   },
   mounted() {
     /* banner-swiper */
@@ -332,10 +287,20 @@ export default {
       live: true
     })
     wow.init();
+    var pageWidth = document.body.clientWidth;
+    this.swiperHeight = pageWidth*1284/2147; 
+    var that = this;
+    window.onresize=function(){
+      var pageWidth = document.body.clientWidth;
+      that.swiperHeight = pageWidth*1284/2147; 
+    }
   }
 };
 </script>
 <style scoped>
+.img-responsive{
+  height: 200px;
+}
 /* 整体盒子 */
 #HomePage {
   width: 100%;
@@ -379,7 +344,7 @@ export default {
 }
 /* 大数据管理系统 */
 #bigData {
-  padding: 100px;
+  padding: 30px 100px;
   transition: all ease 0.6s;
   box-sizing: border-box;
 }
