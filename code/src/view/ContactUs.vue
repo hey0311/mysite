@@ -67,9 +67,9 @@
                 class="company-name"
               >6th Floor, Building A17, 4th District, Huai De Cuigang Industrial Park, Fuyong, Baoan District, Shenzhen,China</div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6" :style="{marginTop:'10px',float:'right',padding:0}">
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6" :style="{marginTop:'10px',float:'right',padding:0}">
               <div id="map" class="wow zoomIn"></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -78,28 +78,28 @@
 </template>
 <script>
 import { WOW } from "wowjs";
-import BMap from "BMap";
+// import BMap from "BMap";
 export default {
   name: "ContactUs",
   data() {
     return {};
   },
   mounted() {
-    var map = new BMap.Map("map"); // 创建地图实例
-    var point = new BMap.Point(116.301841, 40.156506); // 创建点坐标
-    map.centerAndZoom(point, 18); // 初始化地图，设置中心点坐标和地图级别
-    map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
-    var marker = new BMap.Marker(point); // 创建标注
-    map.addOverlay(marker); // 将标注添加到地图中
-    var opts = {
-      width: 50, // 信息窗口宽度
-      height: 10, // 信息窗口高度
-      title: "黄元公寓" // 信息窗口标题
-    };
-    var infoWindow = new BMap.InfoWindow("我的家", opts); // 创建信息窗口对象
-    map.openInfoWindow(infoWindow, map.getCenter()); // 打开信息窗口
-    var wow = new WOW();
-    wow.init();
+    // var map = new BMap.Map("map"); // 创建地图实例
+    // var point = new BMap.Point(116.301841, 40.156506); // 创建点坐标
+    // map.centerAndZoom(point, 18); // 初始化地图，设置中心点坐标和地图级别
+    // map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+    // var marker = new BMap.Marker(point); // 创建标注
+    // map.addOverlay(marker); // 将标注添加到地图中
+    // var opts = {
+    //   width: 50, // 信息窗口宽度
+    //   height: 10, // 信息窗口高度
+    //   title: "黄元公寓" // 信息窗口标题
+    // };
+    // var infoWindow = new BMap.InfoWindow("我的家", opts); // 创建信息窗口对象
+    // map.openInfoWindow(infoWindow, map.getCenter()); // 打开信息窗口
+    // var wow = new WOW();
+    // wow.init();
   }
 };
 </script>
