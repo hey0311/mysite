@@ -7,8 +7,8 @@
         <div class="server pull-left">
           <img class="whatapp_icon" src="@/assets/img/whatsapp.png"/>
           <span class="glyphicon glyphicon-earphone"></span>0086+13691663387
-          <!-- TODO: add whatapp icon -->
           <span class="glyphicon glyphicon-envelope"></span>info@buyshipnow.com
+          <img class="skype_icon" src="@/assets/img/skype.png"/>monica@apriltec.com
           <!-- <span class="glyphicon glyphicon-time"></span>7x24小时为您服务 -->
         </div>
         <div class="shejiao pull-right">
@@ -21,7 +21,7 @@
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo" @click="nav2Home">
-        <img src="@/assets/img/logo_black.png">
+        <img src="@/assets/img/logo_black.jpg" style="height:100%;width:100%">
       </div>
       <!-- 导航内容 -->
       <ul class="header-nav-wrapper">
@@ -47,7 +47,7 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
+        <img class="center-block" style="width:100%;height:100%" src="@/assets/img/logo_black.jpg" alt="logo">
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
@@ -180,8 +180,9 @@ export default {
 }
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
-  width: 100px;
-  height: 100%;
+  margin-top: 35px;
+  width: 198px;
+  height: 40px;
   cursor: pointer;
   float: left;
   position: relative;
@@ -299,8 +300,8 @@ export default {
   }
   /* 导航栏logo图片 */
   #header .header-nav-m .header-nav-m-logo img {
-    width: 95px;
-    height: 45px;
+    width: 198px;
+    height: 40px;
     position: absolute;
     top: 0;
     left: 0;
@@ -358,6 +359,14 @@ export default {
   }
 }
   .whatapp_icon{
+    display: inline;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+  }
+  .skype_icon{
+    margin-left: 3px;
+    margin-right: 5px;
     display: inline;
     margin-top: -2px;
     width: 20px;

@@ -1,7 +1,7 @@
 <template>
   <div id="footer" class="container-fluid">
     <div class="logo">
-      <img src="@/assets/img/logo_white.png" alt="logo图">
+      <img src="@/assets/img/logo_white.jpg" class="logo-img" alt="logo图">
     </div>
     <!-- <p class="title">公司企业网站模板</p>
     <p class="address_tel_fax">
@@ -34,9 +34,13 @@ export default {
   text-align: center;
 }
 .logo {
-  width: 95px;
-  height: 45px;
+  width: 198px;
+  height: 40px;
   margin: 50px auto 20px;
+}
+.logo-img{
+  width: 100%;
+  height: 100%;
 }
 .title {
   font-size: 25px;

@@ -24,8 +24,8 @@
     <!-- 大数据管理系统 -->
     <div id="bigData" class="container-fuild" :key="item.name" v-for="item in serviceList">
       <div class="row bigData-container">
-        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="">
+        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn service-img-wrapper">
+          <img class="img-responsive" :src="item.img" alt="">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
@@ -117,7 +117,39 @@
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
               :style="{height:'250px'}"
             >
-              <img class="center-block" :src="item.logo" alt="logo">
+              <img :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
+              <p class="text-center">{{item.title}}</p>
+              <div
+                class="text-center"
+                v-html="item.content"
+                onmouseenter="this.style.color='#28f'"
+                onmouseleave="this.style.color='#ccc'"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 支付方式 -->
+    <div id="whyChooseUs" class="conatiner-fuild">
+      <div class="container">
+        <div class="whyChooseUs-title text-center">
+          <!-- <p>为什么选择我们的服务</p> -->
+          <p>PAYMENT TERM</p>
+        </div>
+        <div class="row">
+          <div
+            class="col-xs-12 col-sm-6 col-md-3 server-wrapper"
+            v-for="(item,index) in paymentList"
+            :key="index"
+          >
+            <div
+              class="server-block wow slideInUp"
+              onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
+              onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
+              :style="{height:'250px'}"
+            >
+              <img :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
               <p class="text-center">{{item.title}}</p>
               <div
                 class="text-center"
@@ -142,6 +174,7 @@ export default {
       serviceList:[
         {
           title:'Free product sourcing and quote',
+          img: require("@/assets/img/service_1.jpg"),
           content:[
             'Just give us a product link or image, we can quote within 24 hours ! This service is free.',
             'Our price is much better than Aliexpress, we offer wholesale price for small order quantity.'
@@ -149,30 +182,35 @@ export default {
         },
         {
           title:'Free warehousing',
+          img: require("@/assets/img/service_2.jpg"),
           content:[
             'We provide free warehousing services to each customer, we help you reduce storage pressure.',
           ]
         },
         {
           title:'Free quality control',
+          img: require("@/assets/img/service_3.jpg"),
           content:[
             'Our QC team will inspect all orders before delivery.',
           ]
         },
         {
           title:'Combined delivery',
+          img: require("@/assets/img/service_4.jpg"),
           content:[
             'When you need order different products from different supplier,we help you put them into same carton and deliver to your address, you only need pay freight one time,it cost much lower compare with seperately delivery.',
           ]
         },
         {
           title:'Make your own brand products',
+          img: require("@/assets/img/service_5.jpg"),
           content:[
             "If you want to start your own brand, but don't know how to design the product and package? No worry, we can help you design it,we already helped many customers build their own brand,including private label, customized package, thanks cards, LOGO printing.",
           ]
         },
         {
           title:'Experienced in Import and Export',
+          img: require("@/assets/img/service_6.jpg"),
           content:[
             'With more than 10 years working experience in import and export,we can ship nearly all countries,deliver by air, by sea, by train, by truck. ',
             'We also accept FCL,LCL,and do customs clearance for you in China.'
@@ -180,6 +218,7 @@ export default {
         },
         {
           title:'Dropshipping ',
+          img: require("@/assets/img/service_7.jpg"),
           content:[
             'Help you ship your products to your customers.',
           ]
@@ -205,23 +244,45 @@ export default {
       ],
       serverList: [
         {
-          logo: require("@/assets/img/tel.png"),
+          logo: require("@/assets/img/trans-air.png"),
           title: "Air Transportation",
           // content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
-          logo: require("@/assets/img/computer.png"),
+          logo: require("@/assets/img/trans-ship.png"),
           title: "Sea Transportation",
           // content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
-          logo: require("@/assets/img/qq.png"),
+          logo: require("@/assets/img/trans-train.png"),
           title: "Railway/Truck transportation",
           // content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
-          logo: require("@/assets/img/skill.png"),
+          logo: require("@/assets/img/trans-fba.png"),
           title: "FBA Amazon",
+          // content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+        }
+      ],
+      paymentList: [
+        {
+          logo: require("@/assets/img/trans-air.png"),
+          title: "T/T",
+          // content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
+        },
+        {
+          logo: require("@/assets/img/trans-ship.png"),
+          title: "Paypal",
+          // content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
+        },
+        {
+          logo: require("@/assets/img/trans-train.png"),
+          title: "Western Union  Money Gram",
+          // content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
+        },
+        {
+          logo: require("@/assets/img/trans-fba.png"),
+          title: "Others",
           // content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
       ]
@@ -448,8 +509,12 @@ export default {
   border-bottom: 5px solid #ccc;
 }
 #whyChooseUs .server-block img {
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 70px;
+}
+#whyChooseUs .server-block .center-block-3{
+  width: 70px;
+  height: 70px;
 }
 #whyChooseUs .server-block > p {
   font-size: 20px;
@@ -590,5 +655,9 @@ export default {
     padding: 20px 0;
   }
 }
+  .service-img-wrapper{
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
