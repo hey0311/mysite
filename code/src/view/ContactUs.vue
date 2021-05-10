@@ -4,7 +4,7 @@
     <div class="container">
       <div class="container-fuild ContactUs-container">
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-6" :style="{marginRight:'20px'}">
+          <div class="col-xs-12 col-sm-12 col-md-6 form-wrapper" :style="{marginRight:'20px'}">
             <form class="form-horizontal" role="form">
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">Name</label>
@@ -44,29 +44,37 @@
             </div>
             <div class="sub-text2">We’d love to hear from you and let us work together.</div>
             <div class="company">
-              <div class="company-icon"></div>
+              <img class="company-icon" src="@/assets/img/company.png"/>
               <div class="company-name" :style="{fontWeight:'bold'}">dropshipnow</div>
             </div>
             <div class="company">
-              <div class="company-icon"></div>
+              <img class="company-icon" src="@/assets/img/whatsapp.png"/>
               <div class="company-name">(0086+)13691663387</div>
             </div>
             <div class="company">
-              <div class="company-icon"></div>
+              <img class="company-icon" src="@/assets/img/email.png"/>
               <div class="company-name">info@buyshipnow.com</div>
             </div>
             <div class="company">
-              <div class="company-icon"></div>
-              <div class="company-name">Mon to Sat 09:00 - 19:00</div>
-              <div class="company-name" :style="{fontWeight:'bold'}">Sunday CLOSED</div>
+              <img class="company-icon" src="@/assets/img/skype.png"/>
+              <div class="company-name">monica@apriltec.com</div>
             </div>
             <div class="company">
-              <div class="company-icon"></div>
+              <img class="company-icon" src="@/assets/img/clock.png"/>
+              <div class="company-name-wrapper">
+              <div class="company-name">Mon to Sat 09:00 - 19:00</div>
+              <div class="company-name" :style="{fontWeight:'bold'}">Sunday CLOSED</div>
+              </div>
+            </div>
+            <div class="company">
+              <img class="company-icon" src="@/assets/img/address.png"/>
+              <div class="company-name-wrapper">
               <div class="company-name" :style="{fontWeight:'bold'}">ShenZhen,China</div>
               <div
                 class="company-name"
               >6th Floor, Building A17, 4th District, Huai De Cuigang Industrial Park, Fuyong, Baoan District, Shenzhen,China</div>
             </div>
+              </div>
             <!-- <div class="col-xs-12 col-sm-12 col-md-6" :style="{marginTop:'10px',float:'right',padding:0}">
               <div id="map" class="wow zoomIn"></div>
             </div> -->
@@ -123,9 +131,17 @@ export default {
 }
 .company {
   margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.company-icon{
+  width: 50px;
+  height: 50px;
 }
 .company-name {
   font-size: 18px;
+  margin-left: 30px;
   /* font-weight: bold; */
 }
 .banner {
@@ -151,11 +167,17 @@ export default {
 .row {
   margin-right: 0;
   margin-left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 @media screen and (max-width: 997px) {
   .ContactUs-container {
     padding: 20px 0;
   }
+}
+.form-wrapper{
+  flex:0 0 50%;
 }
 </style>
 

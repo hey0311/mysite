@@ -7,7 +7,7 @@
           <img class="img-responsive center-block" src="@/assets/img/about_img.png" />
         </div>
         <div @click="clickBlog" class="col-xs-12 col-sm-12 col-md-6">
-          <h3>{{item.title}}</h3>
+          <h3 style="fontWeight:bold">{{item.title}}</h3>
           <p class=".text-justify" v-for="p in item.content" :key="p">{{p}}</p>
         </div>
       </div>

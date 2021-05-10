@@ -117,7 +117,7 @@
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
               :style="{height:'250px'}"
             >
-              <img :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
+              <img :style="item.style" :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
               <p class="text-center">{{item.title}}</p>
               <div
                 class="text-center"
@@ -149,7 +149,7 @@
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'"
               :style="{height:'250px'}"
             >
-              <img :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
+              <img :style="item.style" :class="['center-block','center-block-'+index]" :src="item.logo" alt="logo">
               <p class="text-center">{{item.title}}</p>
               <div
                 class="text-center"
@@ -266,22 +266,24 @@ export default {
       ],
       paymentList: [
         {
-          logo: require("@/assets/img/trans-air.png"),
+          logo: require("@/assets/img/tt.png"),
           title: "T/T",
           // content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
         },
         {
-          logo: require("@/assets/img/trans-ship.png"),
+          logo: require("@/assets/img/paypal.png"),
           title: "Paypal",
+          style:'height:60px;width:206px;'
           // content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
         },
         {
-          logo: require("@/assets/img/trans-train.png"),
+          logo: require("@/assets/img/union.png"),
           title: "Western Union  Money Gram",
+          style:'height:60px;width:234px'
           // content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
         },
         {
-          logo: require("@/assets/img/trans-fba.png"),
+          logo: require("@/assets/img/others.png"),
           title: "Others",
           // content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
         }
