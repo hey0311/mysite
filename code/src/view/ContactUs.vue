@@ -60,19 +60,28 @@
               <div class="company-name">monica@apriltec.com</div>
             </div>
             <div class="company">
+              <img class="company-icon" src="@/assets/img/wechat.png"/>
+              <div class="company-name">fangcuizhu</div>
+            </div>
+            <div class="company">
+              <img class="company-icon" src="@/assets/img/qq.png"/>
+              <div class="company-name">fangcuizhu</div>
+            </div>
+            <div class="company">
               <img class="company-icon" src="@/assets/img/clock.png"/>
               <div class="company-name-wrapper">
               <div class="company-name">Mon to Sat 09:00 - 19:00</div>
               <div class="company-name" :style="{fontWeight:'bold'}">Sunday CLOSED</div>
               </div>
             </div>
-            <div class="company">
+            <div class="company" style="align-items:flex-start">
               <img class="company-icon" src="@/assets/img/address.png"/>
               <div class="company-name-wrapper">
               <div class="company-name" :style="{fontWeight:'bold'}">ShenZhen,China</div>
               <div
                 class="company-name"
-              >6th Floor, Building A17, 4th District, Huai De Cuigang Industrial Park, Fuyong, Baoan District, Shenzhen,China</div>
+              >Room 303, Building C, No. 9, Yuanchuang Park, Longwu Industrial Zone, Bulong Road, Shangfen Community, Minzhi Street, Longhua District, Shenzhen, Guangdong</div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920.59207349766!2d114.01795085553165!3d22.640053081317497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34038cc40c983a9f%3A0x3c08fc5c323fd487!2z6b6Z5pi85bel5Lia5Yy6!5e0!3m2!1seh-US!2sjp!4v1620753073570!5m2!1sen-US!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" class="google-map" loading="lazy"></iframe>
             </div>
               </div>
             <!-- <div class="col-xs-12 col-sm-12 col-md-6" :style="{marginTop:'10px',float:'right',padding:0}">
@@ -178,6 +187,9 @@ export default {
 }
 .form-wrapper{
   flex:0 0 50%;
+}
+.google-map{
+  margin-left: 30px;
 }
 </style>
 

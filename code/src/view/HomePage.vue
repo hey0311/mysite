@@ -186,7 +186,7 @@ export default {
       serviceList:[
         [
         {
-          title:'Free product sourcing and quote',
+          title:'1.Free product sourcing and quote',
           img: require("@/assets/img/service_1.jpg"),
           content:[
             'Just give us a product link or image, we can quote within 24 hours ! This service is free.',
@@ -194,7 +194,7 @@ export default {
           ]
         },
         {
-          title:'Free warehousing',
+          title:'2.Free warehousing',
           img: require("@/assets/img/service_2.jpg"),
           content:[
             'We provide free warehousing services to each customer, we help you reduce storage pressure.',
@@ -203,14 +203,14 @@ export default {
         ],[
 
         {
-          title:'Free quality control',
+          title:'3.Free quality control',
           img: require("@/assets/img/service_3.jpg"),
           content:[
             'Our QC team will inspect all orders before delivery.',
           ]
         },
         {
-          title:'Combined delivery',
+          title:'4.Combined delivery',
           img: require("@/assets/img/service_4.jpg"),
           content:[
             'When you need order different products from different supplier,we help you put them into same carton and deliver to your address, you only need pay freight one time,it cost much lower compare with seperately delivery.',
@@ -219,14 +219,14 @@ export default {
         ],[
 
         {
-          title:'Make your own brand products',
+          title:'5.Make your own brand products',
           img: require("@/assets/img/service_5.jpg"),
           content:[
             "If you want to start your own brand, but don't know how to design the product and package? No worry, we can help you design it,we already helped many customers build their own brand,including private label, customized package, thanks cards, LOGO printing.",
           ]
         },
         {
-          title:'Experienced in Import and Export',
+          title:'6.Experienced in Import and Export',
           img: require("@/assets/img/service_6.jpg"),
           content:[
             'With more than 10 years working experience in import and export,we can ship nearly all countries,deliver by air, by sea, by train, by truck. ',
@@ -235,7 +235,7 @@ export default {
         },
         ],[
         {
-          title:'Dropshipping ',
+          title:'7.Dropshipping ',
           img: require("@/assets/img/service_7.jpg"),
           content:[
             'Help you ship your products to your customers.',

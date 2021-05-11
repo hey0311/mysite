@@ -95,7 +95,7 @@ export default {
           children: []
         },
         {
-          name: "Sourcing Service",
+          name: "How To Work With Us",
           path: "/sourcingservice",
           children: [
             // {
@@ -108,19 +108,19 @@ export default {
             // }
           ]
         },
-        {
-          name: "Fullfillment Service",
-          path: "/fullfillmentservice",
-          children: []
-        },
+        // {
+        //   name: "Fullfillment Service",
+        //   path: "/fullfillmentservice",
+        //   children: []
+        // },
         {
           name: "About Us",
-          path: "/newsinformation",
+          path: "/blog",
           children: []
         },
         {
-          name: "Blog",
-          path: "/blog",
+          name: "News",
+          path: "/newsinformation",
           children: []
         },
         // {
@@ -160,8 +160,12 @@ export default {
 <style scoped>
 /* 顶部 */
 #header {
+  margin-top: -160px;
   background: #f4f4f4;
   transition: all ease 0.6s;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
 }
 #header .header-top {
   height: 50px;

@@ -17,4 +17,7 @@ export default {
 body{
   font-family: Arial,sans-serif;
 }
+#app{
+  padding-top: 160px;
+}
 </style>

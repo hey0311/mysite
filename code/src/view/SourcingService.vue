@@ -3,10 +3,10 @@
     <div class="banner container-fuild text-center"></div>
     <div class="container">
       <div class="row CompanyIntroduction-container" v-for="item in list" :key="item.title">
-        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive center-block" src="@/assets/img/about_img.png" />
+        <div class="col-xs-10 col-sm-10 col-md-5 wow zoomIn">
+          <img class="img-responsive center-block" :src="item.img" />
         </div>
-        <div @click="clickBlog" class="col-xs-12 col-sm-12 col-md-6">
+        <div @click="clickBlog" class="col-xs-14 col-sm-14 col-md-7">
           <h3 style="fontWeight:bold">{{item.title}}</h3>
           <p class=".text-justify" v-for="p in item.content" :key="p">{{p}}</p>
         </div>
@@ -32,7 +32,8 @@ export default {
             "Step 6: Only 1-3 days, we can receive your products from different suppliers, we will check and take product photos to you to double confirm, them repack products according to your requirement.",
             "Step 7:  After getting your approval,we will send your parcels to you via air/sea/train/truck, we offer door to door service and tax free. Drop shipping is also available.",
             "Step 8: You will receive your parcel by DHL/FEDEX/TNT/UPS,or by sea, by train,by truck,etc. We will track your parcel after you received."
-          ]
+          ],
+          img:require('@/assets/img/sourcing_1.jpg')
         },
         {
           title: "Why choose us ?",
@@ -48,7 +49,8 @@ export default {
             "Work with us now,let us work in more efficient way!",
             "4. Plan to build your own brand ?",
             "We have many years working experience in helping customer build their own brand, include private label, customized package, thanks cards, LOGO printing."
-          ]
+          ],
+          img:require('@/assets/img/sourcing_2.jpg')
         },
         {
           title: "Most suitable transportation for you",
@@ -59,7 +61,8 @@ export default {
             "We offer national collect goods service,can collect goods from Yiwu,Ningbo,Shenzhen,Hongkong,etc.",
             "We can do export customs clearance, import customs clearance,do import tax free and door to door service.",
             "We can provide imported document,such as Certificate of Origin (C/O), Form E, Form A service,Export License."
-          ]
+          ],
+          img:require('@/assets/img/sourcing_3.jpg')
         }
       ]
     };
@@ -87,6 +90,9 @@ export default {
   background-attachment: scroll;
   background-position: center center;
 }
+.container{
+  padding-bottom: 50px;
+}
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -98,7 +104,7 @@ export default {
 }
 .CompanyIntroduction-container > div > p {
   font-size: 14px;
-  line-height: 2.5rem;
+  /* line-height: 2.5rem; */
 }
 @media screen and (max-width: 997px) {
   .CompanyIntroduction-container {

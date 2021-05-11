@@ -2,13 +2,13 @@
     <div id="NewsInformation">
         <div class="container">
             <div class="container text-center">
-                <h3>新闻动态</h3>
-                <p style="color:#b2b2b2">Company News</p>
+                <h3>News</h3>
+                <!-- <p style="color:#b2b2b2">Company News</p> -->
             </div>
-            <div class="nav container text-center">
+            <!-- <div class="nav container text-center">
                 <a href="#" class="active">公司新闻</a>
                 <a href="#">行业动态</a>
-            </div>
+            </div> -->
             <ul class="news-container container-fuild">
                 <li v-for="(item,index) in newsList" :key="index" class="wow fadeIn">
                     <div class="content">
@@ -40,40 +40,40 @@ export default {
             newsList:[
                 {
                     id: '001',
-                    title: '世界上第一个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第四份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: 'Suez Canal ship freed, but the pressure points in supply chain, global trade persist ',
+                    introduce: '',
+                    date: '03-29',
+                    year: '2021'
                 },{
                     id: '002',
-                    title: '世界上第二个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第四份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: "USA TODAY's expert panel says vaccine delivery must double to reach most Americans in summer and bring pandemic relief. Progress slowed in early 2021. ",
+                    introduce: '',
+                    date: '03-18',
+                    year: '2021'
                 },{
                     id: '003',
-                    title: '世界上第三个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第四份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: "In 2020, online retail platform Amazon reported a net income of 21.33 billion U.S. dollars, up from a 11.6 billion U.S. dollar net income in the previous year. During the same fiscal period, the company's revenue amounted to more than 386 billion U.S. dollars.",
+                    introduce: '',
+                    date: '01-10',
+                    year: '2021'
                 },{
                     id: '004',
-                    title: '世界上第四个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第四份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: 'VAT Changes on Sales to UK Customers on Amazon for 2021',
+                    introduce: '',
+                    date: '12-24',
+                    year: '2020'
                 },{
                     id: '005',
-                    title: '世界上第五个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第五份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: 'The United Kingdom left the European Union on 31 January 2020. In 2020 the EU and the UK reached an agreement on their new partnership. It sets out the rules that apply between the EU and the UK as of 1 January 2021. ',
+                    introduce: '',
+                    date: '01-31',
+                    year: '2020'
                 },{
                     id: '006',
-                    title: '世界上第六个程序员',
-                    introduce: '为计算程序拟定“算法”，写作的第五份“程序设计流程图”，被珍视为“第一位给计算机',
-                    date: '05-24',
-                    year: '2019'
+                    title: 'According to the latest news, a container ship full of Chinese cargo, INTERASIA CATALYST ship during the voyage, the ship loaded with containers suddenly caught fire, the fire was once out of control! Industry analysts believe that the container ship fire accident is very likely to be dangerous goods or flammable goods reported caused. ',
+                    introduce: '',
+                    date: '01-20',
+                    year: '2020'
                 }
             ]
         }
