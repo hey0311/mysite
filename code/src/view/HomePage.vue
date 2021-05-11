@@ -22,16 +22,28 @@
       </div>
     </div>
     <!-- 大数据管理系统 -->
-    <div id="bigData" class="container-fuild" :key="item.name" v-for="item in serviceList">
-      <div class="row bigData-container">
+    <div :style="{display:'flex',justifyContent:'space-between'}" id="bigData" class="container-fuild" :key="item[0].name" v-for="item in serviceList">
+      <div class="row bigData-container" >
         <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn service-img-wrapper">
-          <img class="img-responsive" :src="item.img" alt="">
+          <img class="img-responsive" :src="item[0].img" alt="">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 bigData-content">
           <h2 class="bigData-title">
-            {{item.title}}
+            {{item[0].title}}
           </h2>
-          <p :key="p" v-for="p in item.content">{{p}}</p>
+          <p :key="p" v-for="p in item[0].content">{{p}}</p>
+          <a @click="contactus" class="btn btn-lg btn-block btn-info">Contact Us</a>
+        </div>
+      </div>
+      <div class="row bigData-container" v-if="item[1]" >
+        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn service-img-wrapper">
+          <img class="img-responsive" :src="item[1].img" alt="">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6  bigData-content">
+          <h2 class="bigData-title">
+            {{item[1].title}}
+          </h2>
+          <p :key="p" v-for="p in item[1].content">{{p}}</p>
           <a @click="contactus" class="btn btn-lg btn-block btn-info">Contact Us</a>
         </div>
       </div>
@@ -172,6 +184,7 @@ export default {
   data() {
     return {
       serviceList:[
+        [
         {
           title:'Free product sourcing and quote',
           img: require("@/assets/img/service_1.jpg"),
@@ -187,6 +200,8 @@ export default {
             'We provide free warehousing services to each customer, we help you reduce storage pressure.',
           ]
         },
+        ],[
+
         {
           title:'Free quality control',
           img: require("@/assets/img/service_3.jpg"),
@@ -201,6 +216,8 @@ export default {
             'When you need order different products from different supplier,we help you put them into same carton and deliver to your address, you only need pay freight one time,it cost much lower compare with seperately delivery.',
           ]
         },
+        ],[
+
         {
           title:'Make your own brand products',
           img: require("@/assets/img/service_5.jpg"),
@@ -216,6 +233,7 @@ export default {
             'We also accept FCL,LCL,and do customs clearance for you in China.'
           ]
         },
+        ],[
         {
           title:'Dropshipping ',
           img: require("@/assets/img/service_7.jpg"),
@@ -223,6 +241,7 @@ export default {
             'Help you ship your products to your customers.',
           ]
         },
+        ]
       ],
       swiperList: [
         {
@@ -410,6 +429,20 @@ export default {
   padding: 30px 100px;
   transition: all ease 0.6s;
   box-sizing: border-box;
+  height: 320px;
+}
+.bigData-container{
+  flex:0 0 47%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bigData-content{
+  height: 100%;
+}
+#bigData .btn-info{
+  position: absolute;
+  bottom: 0;
 }
 #bigData .bigData-title {
   padding-bottom: 10px;
