@@ -245,7 +245,7 @@ export default {
       ],
       swiperList: [
         {
-          img: require("@/assets/img/banner1.png"),
+          img: require("@/assets/img/banner1.jpg"),
           path: "",
           title: '四月之春',
           content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',

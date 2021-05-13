@@ -7,8 +7,8 @@
                     <img class="img-responsive center-block" src="@/assets/img/logo_white.jpg">
                 </div>
                 <div @click="clickBlog" class="col-xs-12 col-sm-12 col-md-6">
-                    <h3>Shenzhen Buyshipnow trading Co.,Ltd </h3>
-                    <p class=".text-justify">Shenzhen Buyshipnow trading Co.,Ltd is located in Shenzhen China,we have worked togethere with more than 100 online sellers,including Amazon Sellers, eBay Sellers,shopify seller,etc.
+                    <h3>Shenzhen buyshiphere trading Co.,Ltd </h3>
+                    <p class=".text-justify">Shenzhen buyshiphere trading Co.,Ltd is located in Shenzhen China,we have worked togethere with more than 100 online sellers,including Amazon Sellers, eBay Sellers,shopify seller,etc.
 When you buy from Aliexpress, you may encounter problems:
 Such as high product prices, long shipping time,lost parcels in transit, high shipping costs, slowly response from supplier, etc. 
 Now, let us help solve these problems !</p>
@@ -67,7 +67,7 @@ export default {
     font-size: 30px;
     height: 150px;
     line-height: 150px;
-    background-image: url('../assets/img/banner1.png');
+    background-image: url('../assets/img/banner1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;

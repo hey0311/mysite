@@ -7,7 +7,7 @@
         <div class="server pull-left">
           <img class="whatapp_icon" src="@/assets/img/whatsapp.png"/>
           <span class="glyphicon glyphicon-earphone"></span>0086+13691663387
-          <span class="glyphicon glyphicon-envelope"></span>info@buyshipnow.com
+          <span class="glyphicon glyphicon-envelope"></span>info@buyshiphere.com
           <img class="skype_icon" src="@/assets/img/skype.png"/>monica@apriltec.com
           <!-- <span class="glyphicon glyphicon-time"></span>7x24小时为您服务 -->
         </div>
