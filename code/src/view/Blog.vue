@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row CompanyIntroduction-container">
                 <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-                    <img class="img-responsive center-block" src="@/assets/img/logo_white.jpg">
+                    <img class="img-responsive center-block" src="@/assets/img/logo_white.png">
                 </div>
                 <div @click="clickBlog" class="col-xs-12 col-sm-12 col-md-6">
                     <h3>Shenzhen buyshiphere trading Co.,Ltd </h3>

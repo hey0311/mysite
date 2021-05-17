@@ -5,34 +5,34 @@
       <div class="container-fuild ContactUs-container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-6 form-wrapper" :style="{marginRight:'20px'}">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" @submit.prevent="sendEmail">
               <div class="form-group">
                 <label for="name" class="col-sm-2 control-label" >Name</label>
                 <div class="col-sm-10 col-xs-12">
-                  <input type="text" class="form-control" id="name" v-model="name" />
+                  <input type="text" class="form-control" id="name" v-model="name" name="from_name"/>
                 </div>
               </div>
               <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="email" v-model="email"/>
+                  <input type="text" class="form-control" id="email" v-model="email" name="from_email"/>
                 </div>
               </div>
               <div class="form-group">
                 <label for="tel" class="col-sm-2 control-label">Tel</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="tel"  v-model="tel"/>
+                  <input type="text" class="form-control" id="tel"  v-model="tel" name="from_tel"/>
                 </div>
               </div>
               <div class="form-group">
-                <label for="content" class="col-sm-2 control-label">Message</label>
+                <label for="content" class="col-sm-2 control-label" >Message</label>
                 <div class="col-sm-10">
-                  <textarea class="form-control" id="content" rows="8" v-model="message"></textarea>
+                  <textarea class="form-control" id="content" rows="8" v-model="message" name="message"></textarea>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button @click="sendMessage" type="submit" class="btn btn-default btn-block">Send</button>
+                  <button type="submit" class="btn btn-default btn-block">Send</button>
                 </div>
               </div>
             </form>
@@ -113,7 +113,9 @@
 </template>
 <script>
 import { WOW } from "wowjs";
+import emailjs from 'emailjs-com';
 import axios from 'axios'
+import{ init } from 'emailjs-com';
 export default {
   name: "ContactUs",
   data() {
@@ -125,7 +127,7 @@ export default {
     };
   },
   methods: {
-    sendMessage() {
+    sendEmail(e) {
       var url = 'https://sctapi.ftqq.com/SCT38230Toz3KPGlvGVX1JAHFhzvucbgf.send?title='+encodeURI('buyshiphere message')+'&desp='+encodeURI(
         'name:'+this.name+
         '\n,email:'+this.email+
@@ -133,14 +135,22 @@ export default {
         '\nmessage:'+this.message
       )
       axios.get(url).then(function(res){
-        alert('send success!')
+        // alert('send success!')
       }).catch(function(err){
-        alert('send fail!')
+        // alert('send fail!')
       })
-       
+      emailjs.sendForm('service_qyujneg', 'template_td08evi', e.target, 'user_9lxO7oP1kofmIY4hRMRZU')
+        .then((result) => {
+            console.log('SUCCESS!', result.status, result.text);
+            window.alert('SUCCESS!')
+        }, (error) => {
+            console.log('FAILED...', error);
+            window.alert('FAILED...')
+        }); 
     }
   },
   mounted() {
+    init("user_9lxO7oP1kofmIY4hRMRZU");
     // var map = new BMap.Map("map"); // 创建地图实例
     // var point = new BMap.Point(116.301841, 40.156506); // 创建点坐标
     // map.centerAndZoom(point, 18); // 初始化地图，设置中心点坐标和地图级别

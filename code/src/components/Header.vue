@@ -21,7 +21,7 @@
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo" @click="nav2Home">
-        <img src="@/assets/img/logo_black.jpg" style="height:100%;width:100%">
+        <img src="@/assets/img/logo_black.png" style="height:100%;width:100%">
       </div>
       <!-- 导航内容 -->
       <ul class="header-nav-wrapper">
@@ -47,7 +47,7 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div class="header-nav-m-logo">
-        <img class="center-block" style="width:100%;height:100%" src="@/assets/img/logo_black.jpg" alt="logo">
+        <img class="center-block" style="width:100%;height:100%" src="@/assets/img/logo_black.png" alt="logo">
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
@@ -185,8 +185,8 @@ export default {
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
   margin-top: 35px;
-  width: 198px;
-  height: 40px;
+  width: 165px;
+  height: 45px;
   cursor: pointer;
   float: left;
   position: relative;
